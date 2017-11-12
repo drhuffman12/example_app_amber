@@ -139,7 +139,7 @@ docker-compose stop app
 To view the running containers, type:
 
 ```sh
-$ docker-compose ps -a
+$ docker-compose ps
 ```
 
 This should show something like:
@@ -158,7 +158,7 @@ exampleappamber_web_1       bash -c npm install && npm ...   Up
 ## Browse your starter-app
 
 ```sh
-xdg-open http://localhost:3000/
+bin/browse_web_app.sh
 ```
 
 It should look something like
