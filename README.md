@@ -115,7 +115,7 @@ docker-compose config --services
 In a separate terminal, type:
 
 ```sh
-docker-compose run app
+docker-compose up
 ```
 
 * CTRL-c at any time should shut down the containers.
@@ -125,7 +125,7 @@ docker-compose run app
 In a terminal, type (to background it):
 
 ```sh
-docker-compose run -d app
+docker-compose up -d
 ```
 
 * To shutdown the docker containers, type:
@@ -139,24 +139,46 @@ docker-compose stop app
 To view the running containers, type:
 
 ```sh
-$ docker ps -a
+$ docker-compose ps -a
 ```
 
 This should show something like:
 
 ```sh
-$ docker ps -a
-CONTAINER ID        IMAGE                          COMMAND                  CREATED              STATUS                      PORTS                              NAMES
-2a6336a9c3b3        example_app_amber              "amber watch"            About a minute ago   Up About a minute                                              exampleappamber_app_run_1
-58b21e4c5dc3        postgres                       "docker-entrypoint..."   About a minute ago   Up About a minute           5432/tcp                           exampleappamber_db_1
-0a1b4481bee7        drujensen/mailcatcher:latest   "mailcatcher -f --..."   About a minute ago   Up About a minute           1025/tcp, 0.0.0.0:1080->1080/tcp   exampleappamber_mail_1
+$ docker-compose ps
+          Name                         Command               State                 Ports
+------------------------------------------------------------------------------------------------------
+exampleappamber_app_1       amber watch                      Up       0.0.0.0:3000->3000/tcp
+exampleappamber_db_1        docker-entrypoint.sh postgres    Up       5432/tcp
+exampleappamber_mail_1      mailcatcher -f --ip 0.0.0.0      Up       1025/tcp, 0.0.0.0:1080->1080/tcp
+exampleappamber_migrate_1   bash -c while ! nc -q 1 db ...   Exit 1
+exampleappamber_web_1       bash -c npm install && npm ...   Up
 ```
+
+## Browse your starter-app
+
+```sh
+xdg-open http://localhost:3000/
+```
+
+It should look something like
+
+![doc/initial-amber-web-app.png](doc/initial-amber-web-app.png)
 
 ### Shell into your launched dockerized app
 
 In your terminal for shelling into your dockerized app, type:
 
 ```sh
-docker-compose exec app
-# docker-compose exec app -li
+docker-compose exec app /bin/bash
+```
+
+... and then run your commands as needed, e.g.:
+
+```sh
+$ docker-compose exec app /bin/bash
+root@52e3ac23eb0a:/app/local# pwd
+/app/local
+root@52e3ac23eb0a:/app/local# ls
+Dockerfile  LICENSE  README.md  bin  config  docker-compose.yml  example_app_amber  initial-amber-web-app.png  lib  node_modules  package.json  public  scratch.sh  shard.lock  shard.yml  spec  src
 ```
