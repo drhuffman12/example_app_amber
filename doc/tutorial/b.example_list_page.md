@@ -96,3 +96,5 @@ in spec/controllers/world_controller_spec.cr:18: undefined method 'get'
 
       get "/worlds"
 ```
+
+... then do ??? (TBD, see [error: `undefined method 'get'` in scaffolded specs #387](https://github.com/amberframework/amber/issues/387). )
