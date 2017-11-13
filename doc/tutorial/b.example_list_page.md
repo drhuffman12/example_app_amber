@@ -78,3 +78,21 @@ Clicking "New" to add a "World" record will take you to the scaffold-generated f
 Clicking "Submit" should take you back to the "World" list page with a "Created World Successfully" message:
 
 ![screenshots/b.world.new.created_world_successfully.png](screenshots/b.world.new.created_world_successfully.png)
+
+## Run the scaffold-generated specs
+
+### In your docker shell, run your specs
+
+```sh
+crystal spec
+```
+
+### If you get an error like below:
+
+```txt
+Error in line 2: while requiring "./spec/controllers/world_controller_spec.cr"
+
+in spec/controllers/world_controller_spec.cr:18: undefined method 'get'
+
+      get "/worlds"
+```
