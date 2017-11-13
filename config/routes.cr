@@ -23,6 +23,7 @@ Amber::Server.configure do |app|
   end
 
   routes :web do
+    resources "/worlds", WorldController
     get "/", HomeController, :index
   end
 end
