@@ -2,7 +2,7 @@ version: 1.0
 shards:
   amber:
     github: amberframework/amber
-    version: 0.3.0
+    commit: 47640a80dcf64d9ad9f4350d1c13539c1347147f
 
   amber_spec:
     github: amberframework/amber-spec
@@ -10,11 +10,11 @@ shards:
 
   callback:
     github: mosop/callback
-    version: 0.5.1
+    version: 0.6.3
 
   cli:
     github: mosop/cli
-    version: 0.5.2
+    version: 0.6.10
 
   db:
     github: crystal-lang/crystal-db
@@ -25,8 +25,8 @@ shards:
     version: 0.7.7
 
   icr:
-    github: TechMagister/crystal-icr
-    commit: b28bb938cc9e9e439424217c074a9168d253ba4b
+    github: crystal-community/icr
+    version: 0.3.0
 
   jasper_helpers:
     github: amberframework/jasper-helpers
@@ -46,7 +46,7 @@ shards:
 
   optarg:
     github: mosop/optarg
-    version: 0.4.4
+    version: 0.5.8
 
   pg:
     github: will/crystal-pg
@@ -58,19 +58,19 @@ shards:
 
   radix:
     github: luislavena/radix
-    commit: 905bd9e14b9996c793ac95e1e77d2809f7f79568
+    version: 0.3.8
 
   redis:
     github: stefanwille/crystal-redis
-    version: 1.8.0
+    version: 1.9.0
 
   selenium:
     github: ysbaddaden/selenium-webdriver-crystal
     version: 0.3.0
 
   sentry:
-    github: TechMagister/sentry
-    commit: a78129ec1e66aa24c91b93199ea187e4793c8d58
+    github: samueleaton/sentry
+    version: 0.1.0
 
   shell-table:
     github: jwaldrip/shell-table.cr
@@ -78,7 +78,7 @@ shards:
 
   slang:
     github: jeromegn/slang
-    commit: 2c1fa6cc364e825e558ccab0462224c1ab9b9409
+    version: 1.7.0
 
   smtp:
     github: raydf/smtp.cr

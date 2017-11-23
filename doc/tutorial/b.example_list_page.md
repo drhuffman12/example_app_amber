@@ -98,3 +98,16 @@ in spec/controllers/world_controller_spec.cr:18: undefined method 'get'
 ```
 
 ... then do ??? (TBD, see [error: `undefined method 'get'` in scaffolded specs #387](https://github.com/amberframework/amber/issues/387). )
+
+
+```sh
+shards install
+```
+
+... then re-run `crystal spec`.
+
+
+shards build example_app_amber
+
+sudo chown -R ${USER}:${USER} .
+
