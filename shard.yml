@@ -1,0 +1,43 @@
+name: example_app_amber
+version: 0.1.0
+
+authors:
+  - dhuffman <dhuffman@malwarebytes.org>
+
+crystal: 0.23.1
+
+license: UNLICENSED
+
+targets:
+  example_app_amber:
+    main: src/example_app_amber.cr
+
+  amber:
+    main: lib/amber/src/amber/cli.cr
+
+dependencies:
+  amber:
+    github: amberframework/amber
+    branch: master
+    #version: 0.5.0
+
+  granite_orm:
+    github: amberframework/granite-orm
+    version: ~> 0.7.8
+
+  quartz_mailer:
+    github: amberframework/quartz-mailer
+    version: ~> 0.3.0
+
+  jasper_helpers:
+    github: amberframework/jasper-helpers
+    version: ~> 0.1.6
+
+  sqlite3:
+    github: crystal-lang/crystal-sqlite3
+    version: ~> 0.8.3
+
+development_dependencies:
+  garnet_spec:
+    github: amberframework/garnet-spec
+    version: ~> 0.1.1

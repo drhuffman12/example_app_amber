@@ -1,0 +1,44 @@
+version: '2'
+
+services:
+  app:
+    build: .
+    image: example_app_amber
+    command: 'amber watch'
+    working_dir: /app/local
+    environment:
+      DATABASE_URL: sqlite3:./db/example_app_amber_development.db
+      SMTP_URL: mail:1025
+    ports:
+      - '3000:3000'
+    links:
+      - db
+      - mail
+    volumes:
+      - '.:/app/local'
+
+  migrate:
+    build: .
+    image: example_app_amber
+    command: bash -c 'amber db migrate seed'
+    working_dir: /app/local
+    environment:
+      DATABASE_URL: sqlite3:./db/example_app_amber_development.db
+    volumes:
+      - '.:/app/local'
+    links:
+      - db
+
+  mail:
+    image: drujensen/mailcatcher:latest
+    ports:
+      - '1080:1080'
+
+  db:
+    image: example_app_amber
+    command: 'bash -c "ls > /dev/null"'
+    volumes:
+    - 'db:/app/local/db'
+
+volumes:
+  db:
